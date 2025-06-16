@@ -1,0 +1,10 @@
+[
+  {
+    "id": 1,
+    "name": "John Doe",
+    "dob": "1950-02-15",
+    "dod": "2024-06-10",
+    "message": "Beloved father and friend.",
+    "image": "uploads/john.jpg"
+  }
+]
