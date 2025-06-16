@@ -1,0 +1,25 @@
+<h2>Add Obituary</h2>
+<form id="obituary-form" enctype="multipart/form-data">
+  <input name="name" placeholder="Name" required><br>
+  <input name="dob" placeholder="Date of Birth" required><br>
+  <input name="dod" placeholder="Date of Death" required><br>
+  <input name="image" type="file"><br>
+  <textarea name="message" placeholder="Message" required></textarea><br>
+  <button type="submit">Submit</button>
+</form>
+
+<script>
+document.getElementById('obituary-form').addEventListener('submit', async function (e) {
+  e.preventDefault();
+  const form = e.target;
+  const formData = new FormData(form);
+
+  const res = await fetch('/api/obituaries', {
+    method: 'POST',
+    body: formData
+  });
+  
+  if (res.ok) alert('Obituary added!');
+  else alert('Something went wrong.');
+});
+</script>
